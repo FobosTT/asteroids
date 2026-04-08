@@ -22,14 +22,14 @@ def main():
 
     # Init containers
 
+    Player.containers = (updatable, drawable)
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = (updatable)
-    Player.containers = (updatable, drawable)
 
     # Init objects
 
-    asteroid_field = AsteroidField()
     player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2, PLAYER_RADIUS)
+    asteroid_field = AsteroidField()
 
     # Game Loop
 
