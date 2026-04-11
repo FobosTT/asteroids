@@ -4,6 +4,7 @@ from logger import log_state
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
+from gravity import apply_asteroids_gravity
 
 VERSION = pygame.version.ver
 
@@ -42,6 +43,7 @@ def main():
         screen.fill("black")
         updatable.update(dt)
         asteroids.update(dt)
+        apply_asteroids_gravity(updatable, strength_multiplier=500.0)
         for entity in drawable:
             entity.draw(screen)
         pygame.display.flip()
